@@ -26,7 +26,12 @@
       内嵌在head <script>alert('xx');</script>
       外部在外面建xx.js <script src="xx.js"></script>中间不能写代码
 
-
+4.18  (9)(10)(11)(12)常用的输出语句
+       prompt(xxx)浏览器弹出输入框，用户可输入
+       alert（）浏览器弹出警示框
+       console。log（）浏览器控制台打印输出信息（log日志）
+       变量的本质是程序在内存中申请的一块用来存放数据的空间
+       变量名对应变量
 
 
 
