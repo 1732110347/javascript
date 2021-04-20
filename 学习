@@ -39,6 +39,8 @@
        console.log(age);
        声明变量并赋值，我们称为变量的初始化
 
+4.20  (14)(15)var myname=prompt ('名字')
+       
 
 
 
