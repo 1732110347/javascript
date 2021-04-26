@@ -71,8 +71,15 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
       Number.MIN_VALUE最小值 -Infinity无穷小
       NAN，not a number代表一个非数字
 
-
-
-
       复杂数据类型(object)
 
+4.26   (23)(24)
+     isNaN()这个方法用来判断非数字，并且返回一个值，如果是数字返回的是flase如果不是数字返回ture
+     String单引号或双引号最好单 可以嵌套外双内单 内单外双
+     字符串也有特殊字符，转义字符
+     \n换行符，n是newline的意思
+     \\斜杠\
+     \'单引号
+     \"双引号
+     \t tab缩进
+     \b空格，b是blank的意思
