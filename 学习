@@ -83,3 +83,10 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
      \"双引号
      \t tab缩进
      \b空格，b是blank的意思
+
+ 4.27  (25)(26) 字符串型String 字符串长度。通过length可以获取整个字符串的长度。alert(xxx.length);
+      字符串的拼接 字符串+(字符串)(数字)第一个是字符串那么整个就是字符串类型
+
+
+
+
