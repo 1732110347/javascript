@@ -98,4 +98,11 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
       var str='已经'+age;
       alert(str);
 
+4.29 (29)
+      如果一个变量未定义，那就是undefined类型
+      Undefined和数字相加为NAN
+      undefin和字符串为正常
+      null和数字为数字
+      null和字符为正常
+
 
