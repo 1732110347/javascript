@@ -105,4 +105,25 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
       null和数字为数字
       null和字符为正常
 
+5.1(30)typeof检测变量数据类型
+       console.log(typeof xxx)
+       数字number 字符string  true boolean  undefined undefined   null object 
 
+       (32)转换数字类型
+       转为字符串
+       toString()  xx=xx.toString()
+       String  String(xx)
+       加号拼接 xx加字符串
+       数字型
+       布尔
+
+5.2    (33)转换为数字型parselnt和parseFloat
+        parselnt(string) 只取整 单位全去
+        parseFloat(string) 得到小数 浮点数 整数
+
+        (34)转换为数字类型Number和隐式转换
+        Number(string)
+        xx-xx字符转数字
+        xx*xx
+
+5.3     (35)计算年龄案例        
