@@ -216,6 +216,15 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
         (66)要求数字类型相同
         break 退出循环 
 
+5.15  (68)switch和if区别
+       固定值用switch 范围用 is
+       switch 效率更高 
+       分支比较少用if效率高
+       较多用switch 结构更清晰
+
+       
+
+
 
 
 
