@@ -205,7 +205,16 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
         如果条件表达式结果为真 则返回1如果为假则返回2
         var result =xx>xx ?xx:xx;
         
-
+5.14   (65)switch  利用表达式的值和case后面的选项值相匹配 匹配上就执行case 没有就执行default里的
+        switch(表达式){
+              case xxxx:
+              执行语句;
+              break;
+              default:
+              执行最后语句;
+        }
+        (66)要求数字类型相同
+        break 退出循环 
 
 
 
