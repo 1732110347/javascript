@@ -233,9 +233,25 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
 6.17  (73)断点调试
        Sources f11 watch       
 
-6.18      
+6.18  (81) 
+       for(var i=1;i<=5;i++){
+             console.log('a');
+       }
+       var str='';
+       for(var i=1;i<=5;i++){
+             str=str+'a';
+       }
+       console.log(str);
 
-
+6.19  (85)for双循环 外控制行 内控制列
+       var='';
+       for(var i=1;i<=10;i++){
+             for(var j=i;j<=10;j++){
+                   str+='a';
+             }
+             str+='\n';
+       }
+       console.log(str);
 
 
 
