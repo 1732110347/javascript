@@ -233,7 +233,7 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
 6.17  (73)断点调试
        Sources f11 watch       
 
-       
+6.18      
 
 
 
