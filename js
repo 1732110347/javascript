@@ -230,10 +230,10 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
        条件表达式 用来决定每一件循环是否继续执行 就是终止条件
        操作表达式 每次循环后执行的代码 经常用于我们计数器进行更新(递增或递减)
 
-6.17  (73)断点调试
+5.17  (73)断点调试
        Sources f11 watch       
 
-6.18  (81) 
+5.18  (81) 
        for(var i=1;i<=5;i++){
              console.log('a');
        }
@@ -243,7 +243,7 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
        }
        console.log(str);
 
-6.19  (84)for双循环 外控制行 内控制列
+5.19  (84)for双循环 外控制行 内控制列
        var str='';
        for(var i=1;i<=10;i++){
              for(var j=i;j<=10;j++){
@@ -253,7 +253,7 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
        }
        console.log(str);
 
-6.20  (85)9x9表
+5.20  (85)9x9表
         var str='';
        for(var i=1;i<=9;i++){
              for(var j=i;j<=10;j++){
@@ -263,16 +263,105 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
        }
        console.log(str);
 
-6.21  (87)while
+5.21  (87)while
        while(条件表达式){
              //循环体
        }
        当为true执行否则退出
 
+5.22  (89)do while
+       do{
+             循环体
+       }while(条件表达式)
+       do while先执行一次循环体 在判断条件 如果条件表达式为真，则循环继续执行，否则退出
+
+       (90)do{
+             var message=prompt('a');     
+       }while(message !=='a')
+       alert('sa');
+
+5.23   (91)while 和do while可以做更复杂的判断条件，比for循环更灵活    
+        while先判断后执行  do while先执行一次后循环
+
+5.24  (92)continue break
+       只要遇到continue就跳过本次循环到下一个
+       break退出整个循环
+
+5.25   (97)创建数组
+        var 数组名 =new Array () ;     
+
+        var 数组名 =[];          
+
+5.26   (99)遍历数组
+        var a = ['a','s','d'];
+        for(var i=0;i<=a.length;i++){
+              console.log(a[i]);
+        }
+
+5.27  (101)计算机数组和及平均值
+       var a = [1,2,3];
+       var sum=0;
+       for(var i =0;i<a.length;i++){
+             sum+=a[i];
+       }
+       console.log(sum);
+
+5.28 (102)求最大值
+       var a = [2,3,4,1,5,7];
+       var max = a[0];
+       for (var i =1;i<a.length;i++){
+             if(a[i]>max){
+                   max = a[i];
+             }
+       }
+       console.log(max);
 
 
-         
 
 
 
-                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
