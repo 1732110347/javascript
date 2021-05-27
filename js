@@ -217,7 +217,7 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
         break 退出循环 
 
 5.15  (68)switch和if区别
-       固定值用switch 范围用 is
+       固定值用switch 范围用 if
        switch 效率更高 
        分支比较少用if效率高
        较多用switch 结构更清晰
@@ -243,8 +243,8 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
        }
        console.log(str);
 
-6.19  (85)for双循环 外控制行 内控制列
-       var='';
+6.19  (84)for双循环 外控制行 内控制列
+       var str='';
        for(var i=1;i<=10;i++){
              for(var j=i;j<=10;j++){
                    str+='a';
@@ -253,7 +253,21 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
        }
        console.log(str);
 
+6.20  (85)9x9表
+        var str='';
+       for(var i=1;i<=9;i++){
+             for(var j=i;j<=10;j++){
+                   str+=j+'x'+i+'='+i*j+'\t';
+             }
+             str+='\n';
+       }
+       console.log(str);
 
+6.21  (87)while
+       while(条件表达式){
+             //循环体
+       }
+       当为true执行否则退出
 
 
 
