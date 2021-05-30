@@ -316,9 +316,21 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
        }
        console.log(max);
 
+5.29  (103)数组转换字符串
 
+5.30  (104)数组新增元素
+       一 修改length长度
+       var a=["1"];
+       a.length=3;
+       console.log(a)
 
+       二修改索引号，追加数组元素
+       var b=['2','4'];
+       b[3]='3';
+       console.log(b)
+       直接给数组名赋值会覆盖
 
+5.31   (106)
 
 
 
