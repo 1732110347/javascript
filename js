@@ -330,8 +330,28 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
        console.log(b)
        直接给数组名赋值会覆盖
 
-5.31   (106)
+5.31   (106)筛选数组方法1
+        var a = [2,3,4,1,5,7];
+       var max = [];
+       var j=0;
+       for (var i =0;i<a.length;i++){
+             if(a[i]>3=){
+                   max[j] = a[i];
+             j++
+             }
+       }
+       console.log(max);
 
+       筛选数组方法2
+        var a = [2,3,4,1,5,7];
+       var max = [];
+       var j=0;
+       for (var i =0;i<a.length;i++){
+             if(a[i]>3=){
+                   max[max.length] = a[i];        
+             }
+       }
+       console.log(max);
 
 
 
