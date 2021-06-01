@@ -353,7 +353,22 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
        }
        console.log(max);
 
+6.1  (108)删除数组指定元素
+       var a=[1,2,3,4,1,5,5];
+       var b=[];
+       for(var i =0;i<a.length;i++){
+             if(a[i] !=1){
+                   b[b.length] =a[i];
+             }
+       }
 
+       (109)翻转数组
+        var a=[1,2,3,4,1,5,5];
+       var b=[];
+       for(var i =a.length-1;i>=0;i--){
+                   b[b.length] =a[i];
+            
+       }
 
 
 
