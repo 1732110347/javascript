@@ -370,6 +370,27 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
             
        }
 
+6.2   (110)复习交换两个变量值
+       var num1 = 1;
+       var num2 = 2;
+       var temp;
+       temp = num1;
+       num1 = num2;
+       num2 = temp;
+       console.log(num1,num2);
+
+       (111)冒泡排序
+       var a=[2,1,4,3];
+       for (var i=0;i<=a.length-1;i++){外层循环管趟数
+             for(var j=0;j<=a.length-i-1;j++){里面循环管 每一趟的交换次数
+             内部交换2个变量的值 前一个和后面一个数组元素相比较
+if(a[j]>a[j+1]){
+      var b=a[j];
+      a[j]=a[j+1];
+      a[j+1]=b;
+}
+             }
+       }
 
 
 
