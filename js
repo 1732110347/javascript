@@ -384,14 +384,37 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
        for (var i=0;i<=a.length-1;i++){外层循环管趟数
              for(var j=0;j<=a.length-i-1;j++){里面循环管 每一趟的交换次数
              内部交换2个变量的值 前一个和后面一个数组元素相比较
-if(a[j]>a[j+1]){
-      var b=a[j];
-      a[j]=a[j+1];
-      a[j+1]=b;
-}
+       if(a[j]>a[j+1]){
+       var b=a[j];
+       a[j]=a[j+1];
+       a[j+1]=b;
+        }
              }
        }
 
+6.3   (113)函数   封装一段可以被重复执行调用的代码快 
+       function geiSum(num1,num2){
+             var sum =0;
+             for(var i = num1;i<=num2;i++){
+                   sum+=i;
+             }
+             console.log(sum);
+       }
+       getSum(1,100);
+
+       (115)函数使用
+        function 声明的关键字 全部小写
+        函数是做某件事，函数名一般是动词sayHi
+        函数不调用自己不执行
+
+        声明函数  function 函数名(){函数代码}
+        function sayHi(){
+              console.log('xx');
+        }
+        2调用函数
+        函数名()；
+        sayHi();
+        调用函数的时候要加小括号
 
 
 
