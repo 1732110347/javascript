@@ -1,0 +1,163 @@
+    (193)API 和Web API
+    BOM浏览器功能 DOM页面元素
+
+    (195)DOM
+    文档对象模型 标准编程接口
+    DOM树
+    文档:一个页面就是一个文档，DOM中使用document表示
+    元素:页面中的所有标签都是元素，DOM中使用element表示
+    节点:网页中所有内容都是节点(标签、属性、文本、注释)node表示
+
+    (196)getElementById获取元素
+    get获得 element元素 by通过 id是字符串加''
+    var timer =document.getElementById('time')
+
+    console.dir()打印我们返回的元素对象 更好的查看里面的属性和方法
+
+    (197)getElementsByTagName获取某类标签元素
+    getElementsByTagName()方法可以返回带有标签名的对象的集合，以伪数组的形式存储的
+    没有这个元素返回为空的伪数组
+    var lis =document.getElementsByTagName('li')
+
+    var ol =document.getElementById('ol')
+    ol.document.getElementsByTagName('li')
+
+    var ol =document.getElementsByTagName('ol')
+    ol[0].document.getElementsByTagName('li')
+
+    (198)H5新增获取元素方式
+    document.getElementsByClassName('类名')根据类名返回元素对象集合
+
+    document.querySelector 返回指定选择器的第一个元素对象
+    document.querySelector('.box')('#box')('li')
+
+    document.querySelectorAll 返回指定选择器的所有元素对象要加.#
+
+    (199)获取body和html元素
+    获取body document.body
+
+    获取html document.documentElement 
+
+    (200)事件三要素
+    事件源 事件类型 事件处理程序
+    事件源 事件被触发对象
+    var btn =document.getElementById('btn')
+
+    事件类型 如何触发 什么事件 比如鼠标点击(onclick)还是鼠标经过 键盘按下
+
+    事件处理程序 通过一个函数赋值的方式 完成
+    btn.onclick=function(){
+        alert('123');
+    }
+
+    (201)执行事件过程
+    获取事件源  
+    var btn =document.getElementById('btn')
+    绑定事件
+    btn.onclick
+    添加事件处理程序
+    
+    onclick     点击触发
+    onmouseover 经过
+    onmouseout  离开
+    onfocus     获取鼠标焦点触发
+    onblur      失去鼠标焦点触发
+    onmousemove 鼠标移动触发
+    onmouseup   鼠标弹起触发
+    onmousedown 鼠标按下触发
+
+    (202)操作元素 修改元素内容
+    element.innerText 
+    从起始位置到终止位置的内容，去除html标签的同时空格和换行也会去掉
+    element.innerHTML 
+    起始位置到终止位置的全部内容，包括html标签，保留空格和换行
+
+    (204)操作元素 修改元素属性
+    img.src='jpg'
+
+    (206)操作元素 修改表达属性
+    btn.disabled=true 被禁用
+    this.disabled
+
+    (209)操作元素 修改样式属性
+    element.style 行内样式操作
+    element.className 类名样式操作
+
+    this.style.backgroundColor
+
+    (213)使用className修改样式属性
+    element.className='a'改类名
+
+    (216)排他思想
+
+    (217)百度换肤效果
+    var imgs =document.querySelector('.baidu').querySelectorAll('img');
+    for(var i=0;i<imgs.length;i++){
+        imgs[i].onclick=function(){
+            document.body.style.backgroundImage='url('+this.src+')';
+        }
+    }
+
+    (221)获取自定义属性值
+    var div =document.querySelector('div')
+    element.属性
+    div.id 
+
+    获取自定义属性
+    element.getAttribute('属性') 
+    div.getAttribute('id')
+
+    (222)移除自定义属性值
+    设置元素属性
+    div.id='test'
+
+    element.setAttribute('属性','值') 用于自定义
+
+    移除 
+    element.removeAttribute('属性')
+
+    (226)H5自定义属性
+    data-
+    element.dataset.index 或者element.dataset[index]
+    驼峰命名
+
+    (228)节点操作之父节点
+    node.parentNode
+    得到最近父节点
+
+    (229)子节点
+    xxx.childNodes
+    包含元素和文本节点
+
+    获取元素节点
+    var ul=document.querySelector('ul')
+    for(var i=0;i<ul.childNodes.length;i++){
+        if(ul.childNodes[i].nodeType=1){
+            console.log(ul.childNodes[i]);
+        }
+    }
+
+    xxx.children
+
+    (230)第一个元素和最后一个
+    xxx.firstChild
+    xxx.lastChild
+
+    xxx.firstElementChild
+    xxx.lastElementChild
+
+    xxx.children[0]
+
+    (230)
+    (232)兄弟节点
+    (233)创建和添加节点
+    (230)
+    (235)删除节点
+    (230)
+    (237)复制节点
+    (238)动态生成表格 创建学生数据
+    (239)创建行
+    (240)创建单元格
+    (241)添加删除操作
+
+

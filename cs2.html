@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var obj = {
+            uname: 'zsf',
+            age: 18,
+            sex: 'nan',
+            sayHi: function () {
+                console.log('hi');
+            }
+        }
+        console.log(obj[sex]);
+    </script>
+    <script>
+        var str = 'adsd';
+        var o = {};
+        for (var i = 0; i < 1; i++) {
+            var chars = str.charAt(i);
+            if (o[chars]) {//o[chars]得到属性值         
+                o[chars]++;
+            }
+            else {
+                o[chars] = 1
+            }
+        }
+        console.log(o);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

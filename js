@@ -27,8 +27,10 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
     内嵌在head <script>alert('xx');</script>
     外部在外面建xx.js <script src="xx.js"></script>中间不能写代码
 
-4.18  (9)(10)(11)(12)常用的输出语句
-     prompt(xxx)浏览器弹出输入框，用户可输入
+4.18  (9)(10)(11)(12)
+      多行注释shift alt a
+     常用的输出语句
+     prompt('xxx')浏览器弹出输入框，用户可输入
      alert（）浏览器弹出警示框
      console.log（）浏览器控制台打印输出信息（log日志）
      变量的本质是程序在内存中申请的一块用来存放数据的空间
@@ -38,10 +40,10 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
      var是一个js关键字,来声明变量(variable变量的意思)
      age是变量名，访问内存分配的空间 赋值age=xx;
      console.log(age);
-
+      var age=18;
      声明变量并赋值，我们称为变量的初始化
 
-4.20  (14)(15)var myname=prompt ('名字')
+4.20  (14)(15)var myname=prompt ('名字')存储变量
      
 4.21  (16)var age=1,
      ada=23;只var一次
@@ -75,17 +77,18 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
 
 4.26   (23)(24)
      isNaN()这个方法用来判断非数字，并且返回一个值，如果是数字返回的是flase如果不是数字返回ture
-     String单引号或双引号最好单 可以嵌套外双内单 内单外双
+     String单引号或双引号最好单 可以嵌套外双内单 外单内双
      字符串也有特殊字符，转义字符
      \n换行符，n是newline的意思
      \\斜杠\
      \'单引号
-     \"双引号
+     \"双引号    '
      \t tab缩进
      \b空格，b是blank的意思
 
  4.27  (25)(26) 字符串型String 字符串长度。通过length可以获取整个字符串的长度。alert(xxx.length);
       字符串的拼接 字符串+(字符串)(数字)第一个是字符串那么整个就是字符串类型
+      数值相加字符相连
 
 4.28 (27)(28)交互编程的三个要素:
       1.用户输入 
@@ -98,7 +101,8 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
       var str='已经'+age;
       alert(str);
 
-4.29 (29)
+4.29 (29)boolean以及undefin和null
+      true=1 false=0
       如果一个变量未定义，那就是undefined类型
       Undefined和数字相加为NAN
       undefin和字符串为正常
@@ -108,6 +112,11 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
 5.1(30)typeof检测变量数据类型
        console.log(typeof xxx)
        数字number 字符string  true boolean  undefined undefined   null object 
+      (31)字面量
+      蓝色数字型
+      黑色字符型
+      浅蓝色布尔型
+      浅灰色 undefined和null
 
        (32)转换数字类型
        转为字符串
@@ -118,13 +127,18 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
        布尔
 
 5.2    (33)转换为数字型parselnt和parseFloat
-        parselnt(string) 只取整 单位全去
+        parselnt(string) 只取整 单位全去 非数字的去掉
         parseFloat(string) 得到小数 浮点数 整数
 
         (34)转换为数字类型Number和隐式转换
         Number(string)
+        隐式转换
         xx-xx字符转数字
+        '2'-0
+        '2'-'1'
         xx*xx
+        xx/xx
+
 
 5.3     (35)计算年龄案例     
         var year=prompt('输入')
@@ -148,6 +162,7 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
       (39)拓展阅读之标识符关键字保留字
 
 5.6  (42)算数运算符
+      + - * / %
       避免使用浮点数进行运算
 
       (43)表达式和返回值
@@ -335,7 +350,7 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
        var max = [];
        var j=0;
        for (var i =0;i<a.length;i++){
-             if(a[i]>3=){
+             if(a[i]>3){
                    max[j] = a[i];
              j++
              }
@@ -416,6 +431,351 @@ JavaScriot 由ECMAScriot（标准）  DOM（文档对象模型，给予对象可
         sayHi();
         调用函数的时候要加小括号
 
+1.8   (117)函数的参数
+      function (形参)声明
+      (实参)调用
+
+      (119)函数形参和实参匹配问题
+      实参多于形参不取多的
+      少于NaN
+
+      (120)函数的返回值return
+      function gitResult(){
+            return 123;
+      }
+      console.log(gitResult());
+
+      (123)return终止函数并且只能返回一个值
+      return 后面的不会执行
+      一次只能返回一个值 多个返回最后一个
+      用数组返回可以返回多个
+
+      (124)函数返回值2个注意事项
+      函数没有return则返回undefined
+
+      (126)arguments的使用
+      function getMax(){
+            var max=arguments[0];
+      }
+      里面存储所有传进来的实参
+      每个函数都有内置
+      伪数组
+      1具有length属性
+      2按照索引号存储
+      3没有真正数组的一些方法 pop( ) push()
+
+      (131)函数调用另一个函数
+      function fn1(){
+            fn2();
+      }
+
+      (133)函数的两种声明方式
+      1命名函数
+      2函数表达式 匿名函数
+      var 变量名 =function(){}
+      变量名()
+      是变量名不是函数名
+      也可以进行传参
+
+      (135)作用域
+      在某个范围内起作用 减少命名冲突 提高程序的可靠性
+      全局作用域 整个scri标签或者是一个js文件
+      局部作用域 在函数内部 只在函数内部起作用
+
+      (136)全局变量和局部变量
+      全局变量所有地方可以用
+      在函数内部没有声明直接赋值的也属于全局变量
+
+      局部变量只能在函数内部使用
+      函数形参也可以看做局部
+
+      全局变量只有浏览器关闭才会销毁 比较占资源
+      局部变量 程序结束就结束
+
+      (137)没有块级作用域
+      es6新加块级
+      块级{}
+      块级写变量可以调用
+
+      (138)作用域链
+      内部函数可以访问外部函数变量
+      查找最靠近一级
+
+      (141)预解析
+      console.log(num);
+      var num =10;  undefined
+
+      fun(); 报错
+      var fun=function(){console.log(22);}
+
+      js引擎运行js分两步 预解析  代码执行
+      预解析 把所有var还有function提到当前作用域的最前面
+      代码执行 按照代码书写顺序从上往下
+
+      预解析 
+      1变量提升 把所有变量声明提升到当前作用域最前面 不提升赋值操作
+      2函数提升 把所有函数声明提升到当前作用域前面 不调用函数
+
+1.9   (144)什么是对象以及为什么需要
+      对象是由属性和方法组成
+      属性是事物的特征
+      方法事物的行为
+      (145)利用对象字面量创建对象
+      一个属性对应一个属性值
+      各个属性用逗号隔开
+      方法冒号后面跟的是一个匿名函数
+
+      var obj={
+            uname:'zsf',
+            age:18,
+            sex:'nan',
+            sayHi:function(){
+                  console.log('hi');
+            }
+      }
+      使用对象的属性 用对象.属性名  obj.age
+      对象名['属性名'] obj['age']
+      调用方法 对象名.方法名()
+      obj.sayHi();
+
+      (146)变量属性函数方法的区别
+      变量 单独声明 使用直接写变量名 单独存在
+      属性 在对象里不需要声明 使用必须对象.属性
+      函数 单独存在 通过函数名()就可以调用
+      方法对象.方法名()调用
+
+      (147)利用new Object创建对象
+      等号赋值的方法
+      分号结束
+      new obj =new Object();
+      obj.name='zsf';
+      obj.sayHi = function(){}
+
+      (149)构造函数对象
+      function Star(uname,age,sex){
+            this.name=uname;
+            this.sing=function(s){ }
+      }
+       var ldh= new Star('dasas',18,'nan');
+      构造函数首字母大写
+      构造函数不需要return 
+
+      (151)构造函数和对象区别
+      构造函数是一个大类
+      对象是一个具体的事物
+      构造函数创建对象为实例化
+
+      (152)new关键字执行过程
+      1new构造函数可以在内存中创建了一个空对象
+      2this就会指向新创建的空对象
+      3执行构造函数里面的代码 给这个空对象添加属性和方法
+      4返回这个对象N
+
+      (153)遍历对象属性
+      for(变量 in 对象){k变量属性输出的是属性名 对象[k]输出属性值}
+      for(var k in obj){console.log(k); console.log(obj[k])}
+      
+      (156)内置对象
+      自定义对象 内置对象 浏览器对象
+      内置对象 自带的方法
+
+      (157)查阅MDN文档
+
+      (158)数组对象Math最大值方法
+      Math.max()
+      
+      (160)Math绝对值和三个取值方法
+      Math.PI 圆周率
+      Math.floor() 向下取整
+      Math.celil()向上取整
+      Math.round()四舍五入 -.5是往大取
+      Math.abs() 绝对值
+      Math.max()最大
+      Math.min()最小
+
+      (161)Math随机数方法
+      Math.random()返回一个随机的小数
+      得到一个两数之间的随机整数 包括两个数在内
+      function getRandomIntInclusive(min,max){
+            min=Math.ceil(min);
+            max=Math.floor(max);
+            return Math.floor(Math.random()*(max-min+1))+min;
+      }
+
+      (163)Date日期对象的使用
+      构造函数必须用new来创建日期对象
+      var date=new DATE();
+      数字型 2020,10,1 字符型'2020-2-2 2:2:2' '2020/1/1'
+
+      (164)格式化日期年月日星期
+      getFullYear() 获取年
+      getMonth()    获取月(0-11) 返回的月少一个月
+      getDate()     获取日期
+      getDay()      获取星期几(周日0 到周六6)
+      getHour()     获取当前小时
+      getMinutes()  获取当前分钟
+      getSeconds()  获取当前秒
+
+      (166)Date总的毫秒数
+      从1970年开始 date.valueOf()
+      date.getTime
+      var date1=+new Date();
+      Date.now()
+
+      (167)倒计时
+      d=parseInt(总秒数/60/60/24);天数
+      h=parseInt(总秒数/60/60%24);小时
+      m=parseInt(总秒数/60%60);分
+      s=parseInt(总秒数%60);秒
+      function countDown(time){
+            var nowTime = +new Date();
+            var inputTime=+new Date(time);
+            var times=(inputTime-nowTime)/1000;
+      d=parseInt(times/60/60/24);天数
+      h=parseInt(总秒数/60/60%24);小时
+      m=parseInt(总秒数/60%60);分
+      s=parseInt(总秒数%60);秒
+      return d+h+m+s;
+      }
+
+      (169)数组创建的两种方式
+      数组字面量
+      var arr=[1.2]
+
+      new Array()
+      var arr=new Array()创建了一个空数组
+      var arr=new Array(2)创建了长度为2空数组
+      var arr=new Array(2,3)创建了[2,3]数组
+
+      (170)检测是否为数组两种方式
+      instanceof
+      console.log(arr instanceof Arrayy)
+
+      Array.isArray(参数)
+
+      (171)添加数组元素
+      push()在数组末尾添加一个或多个数组元素
+      arr.push(xx);
+      返回数组长度
+      参数直接写数组元素
+
+      unshift()在开头添加数组
+
+      (172)删除数组元素
+      pop()删除数组最后一个元素
+      返回被删的元素
+
+      shift()删除第一个
+
+      (174)数组排序
+      翻转数组 arr.reverse();
+
+      冒泡排序 arr.sort();
+      arr.sort(function(a,b){
+            return a-b;升序
+            return b-a;降序
+      })
+
+      (175)获取数组元素索引
+      arr.indexOf()返回该数组元素的索引号
+      只返回第一个满足的
+      -1表示没有该元素
+
+      lastIndexOf()从后面的
+
+      (176)数组去重案例
+      放入新数组看有没有相同的
+      function unique(arr){
+            var newArr=[];
+            for(var i=0;i<arr.length;i++){
+                if(newArr.indexOf(arr[i])===-1){
+                      newArr.push(arr[i]);
+                }
+            }
+            return newArr;
+      }
+
+      (177)数组转换为字符串
+      arr.toString()
+      toString()将数组转换为字符串
+
+      join('分隔符')
+
+      concat()连接两个或多个数组 不影响原数组 返回应该新的数组
+      slice()数组截取slice(begin,end) 返回被截取项目的新数组
+      splice() 数组删除splice(第几个开始，要删除个数) 返回被删除项目的新数组，这个会影响原数组
+
+      (178)基本包装类型
+      把简单数据类型包装为复杂数据类型
+      var str='aread'
+      var temp=new String('aread')
+      把临时变量的值给str
+      str=temp
+      销毁临时变量
+      temp=null
+
+      (179)字符串不可变
+      值是不可变的只是指向新空间
+
+      (180)根据字符返回位置
+      indexOf('查找字符',起始位置)
+ 
+      (182)根据位置返回字符
+      返回数字位置的字符
+      arr.charAt(数字)
+
+      charCodeAt()返回索引号的字符ASCII值
+
+      arr[数字]
+
+      (183)统计出现次数最多的字符
+              var str='adsd';
+        var o={};
+        for(var i=0;i<1;i++){
+            var chars=str.charAt(i);
+            if (o[chars]) {//o[chars]得到属性值         
+                o[chars]++;
+            }
+            else{
+                o[chars]=1
+            }
+        }     
+        console.log(o);
+        
+      (185)拼接以及截取字符串
+      concat(str1,str2...)  拼接字符串相当于+ +
+      substr(start,length)  从start开始 取length的个数
+      slice(start,end)      从start开始 截取到end位置 end取不到
+      substring(start,end)  从start开始，截取到end位置，end取不到 基本和slice一样但是不接受负值
+
+      .concat('asd')
+
+      (186)替换字符串以及转换为数组
+      replace('被替换的字符'，'替换为的字符') 只替换第一个
+      split('分隔符')将字符转换为数组
+      str='red,pink,ads'
+
+      toUpperCase() 转换为大写
+      toLowerCase() 转换为小写
+
+      (188)数据类型内存分配
+      值类型：简单数据类型/基本数据类型，在存储时变量中存储的是值本身   string number boolean undefined null(返回的是一个空的对象)
+      引用类型：复杂数据类型，在存储变量中存储的仅仅是地址
+      通过new关键字创建的对象(系统对象、自定义对象)如Object、Array、Date
+
+      栈(操作系统):由操作系统自动分配释放存放函数的参数值、局部变量的值。
+      简单数据类型存放到栈里面
+      堆(操作系统):存储复杂类型，又程序员分配释放，若程序员不释放，由垃圾回收机制回收
+      复杂数据类型存放到堆里面
+      简单数据类型 是存放在栈里面 里面直接1开辟一个空间存放的是值
+      复杂数据类型 首先在栈里面存放地址 16进制表示 然后这个地址指向堆里面数据
+
+      (189)简单数据类型传参
+      把值作为参数传给函数的形参时，是把变量在栈空间里的值复制一份给形参，方法内部对形参做任何修改，都不会影响到外部变量
+
+      (190)复杂数据类型传参
+      函数的形参可以看做是一个变量，当我们应该把引用类型变量传给形参时，
+      就是把变量在栈空间里保存的堆地址复制给了形参，形参和实参其实是保存的是同一个堆地址，操作的是同一个对象
 
 
 
