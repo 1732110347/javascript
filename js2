@@ -148,16 +148,175 @@
 
     xxx.children[0]
 
-    (230)
     (232)兄弟节点
+    xx.nextSibling(包含文本和元素)
+    xx.previousSibling
+
+    xx.nextElementSibling
+    xx.previousElementSibling
+
     (233)创建和添加节点
-    (230)
+    document.createElement('xx')
+    添加节点
+    node(父节点).appendChild(child(子节点)) 后面加
+    node.insertBefore(child,指定元素) 前面加
+
     (235)删除节点
-    (230)
+    node.removeChild(child)
+
+    阻止跳转 javascript:;
+
     (237)复制节点
+    node.cloneNode() 括号为空或者false是浅拷贝 true深拷贝
+
     (238)动态生成表格 创建学生数据
-    (239)创建行
-    (240)创建单元格
-    (241)添加删除操作
+    var datas =[{
+        name:'22',
+    }]
+
+    (244)document.write创建元素
+    页面重汇
+
+    (245)innerHTML和reateElement效率
+    innerHTML创建多个元素效率更高(不要拼接字符串，采用数组形式拼接)结构复杂
+    createElement创建多个元素效率稍微低，但是结构清晰
+
+    (248)注册事件两种方式
+    传统方式 只能设置一个事件
+
+    方法监听注册方式
+    eventTarget(目标对象).addEventListener(type,listener[,useCapture])
+    按照注册事件依次执行
+    type:事件类型字符串 click
+    listener:事件处理函数，事件发生时，会调用监听函数
+    useCapture:可选参数，是一个布尔值默认是false
+
+    btns[1].addEventListener('click',function(){
+
+    })
+
+    (249)attachEvent注册事件
+
+    (250)删除事件(解绑事件)
+    传统
+    .onclick=null
+
+    addEventListener
+     btns[1].addEventListener('click',fn)
+     function fn(){
+     btns[1].removeEventListener('click',fn)
+     }
+
+    (252)DOM事件流代码验证
+     useCapture:可选参数，是一个布尔值默认是false
+    false是冒泡阶段
+    true是捕获阶段
+    onblur、onfocus、onmouseenter、onmouseleave没有冒泡
+
+    (253)什么是事件对象
+    function(event){}事件对象只有有了事件才会存在，是系统自动创建的
+    是一系列相关数据的集合 跟事件相关 鼠标 键盘
+    可以自己命名
+
+    (254)e.targer和this区别
+    e.targer返回触发的点击事件
+
+    this返回的是绑定事件和currentTarget一样
+
+    (255)阻止默认行为
+    e.type 返回事件的类型 click
+
+    e.preventDefault()
+
+    (256)阻止冒泡
+    e.stopPropagation()
+
+    (257)事件委托
+    事件监听器设置在其父节点上，利用事件对象的target来找到当前点击的li，事件冒泡到ul有注册事件就好触发
+
+    (258)禁止选中文字和右键菜单
+    禁止右键
+    addEventListener('contextmenu',function(e){
+        e.preventDefault()
+    })
+
+    禁止选中selectstart
+
+    (259)获得鼠标在页面中的坐标
+    e.clientX 返回鼠标相对于窗口可视区的x坐标
+    pageX 返回鼠标相对于文档页面的x坐标
+    screenX 返回鼠标相对于电脑屏幕的x坐标
+
+    (260)跟随鼠标的天使
+    mousemove 
+    var x=e.pageX
+    pic.style.left=x+'px'
+
+    (261)键盘事件
+    onkeyup 某个键盘按键被松开时触发
+    onkeydown 某个键盘按键被按下时触发
+    onkeypress 某个键盘按键被按下时触发 但是不识别功能键 ctrl shift 箭头
+    down press up
+
+    (262)keyCode判断用户按下哪个键
+    e.keyCode 
+    down和up不区分字母大小写
+
+    (263)按键获取焦点
+    if(e.keyCode===83){
+        search.focus();
+    }
+
+    (267)BOM
+    浏览器对象模型，提供独立于内容而与浏览器窗口进行交互的对象核心对象是window
+
+    (268)页面加载事件
+    window.onload是窗口加载事件 当文档完全加载完后执行
+    window.addEventListener('load',function) 没有限制
+
+    DOMContentLoaded事件触发 DOM加载完毕后不包含图片等
+
+    (269)调整窗口大小事件
+    window.onresize=function
+    window.addEventListener('resize',function)
+    调整窗口大小加载事件，当触发时就调用的处理函数
+
+    window.innerWidth屏幕宽度
+
+    (270)定时器setTimeout
+    window.setTimeout(调用函数,延时时间)
+    setTimeout(调用函数名,延时时间)
+    setTimeout('调用函数()',延时时间)
+
+    (271)回调函数
+    回调函数callback 回头函数 上一件干完
+
+    (272)清除定时器clearTimeout
+    window.clearTimeoout(定时器名字)
+
+    (273)定时器 setInterval
+    每隔延时时间调用一次
+    window.setInterval(调用函数,延时时间)
+    setInterval(调用函数名,延时时间)
+    setInterval('调用函数()',延时时间)
+
+    (274)倒计时
+
+    (275)清除定时器clearInterval
+    window.clearInterval(定时器名字)
+    定时器名字进行全局变量
+    
+    (277)this指向问题
+    (278)同步和异步
+    (279)同步任务和异步任务执行过程
+    (280)执行机制
+    (281)location对象常见属性
+    (282)5秒后跳转页面
+    (283)获取url参数
+    (284)location常见方法
+    (285)navigator对象
+    (286)history对象
+   
+
 
 
