@@ -1,1 +1,75 @@
-(287)
+(288)offsetLeft和offsetTop获取元素偏移
+获得元素距离带有定位父元素的位置
+获得元素自身的大小
+返回的数值不带单位
+element.offserParent    返回作为该元素带有定位的父级元素 如果父级没有定位则返回body
+offsetTop               返回元素相对带有定位父元素上方的偏移
+offsetLeft              返回元素相对带有定位父元素左边框的偏移
+offsetWidth             返回自身包括padding、边框、内容去的宽度 返回不带单位
+offsetHeight             返回自身包括padding、边框、内容去的高度 返回不带单位
+
+(290)offset与style区别
+offset
+可以得到任意样式表中的样式值
+没有单位
+Width包含padding border width 只读属性 只能获取不能赋值
+获取元素大小位置 用offset更合适
+
+style
+只能得到行内样式值
+带有单位
+可读写属性 可以获取也可以赋值
+改值 用style
+
+(291)获取鼠标在盒子内的坐标
+移动事件mousemove
+
+(292)拖动模拟框
+
+(295)放大镜
+
+(300)client 
+动态获取元素边框大小 元素大小
+element.clientTop   返回元素上边框大小
+clientLeft          左边框
+clientWidth         返回自身包括padding、内容区的宽度，不含边框 不带单位
+clientHeight         返回自身包括padding、内容区的高度，不含边框 不带单位
+
+(301)立即执行函数
+(function(){})() 第二个小括号可以传参
+(function(){}())
+独立创建了一个作用域 局部变量 
+
+(302)淘宝flexibleJS源码分析之核心原理
+window.devicePixelRatio 物理像素比 PC1 移动2
+
+(303)pageshow事件
+重新加载事件 
+e.persisted返回的是true 如果这个页面是从缓存取过来的也要重新计算
+
+load事件 
+1a标签超链接
+2f5或者刷新按钮
+3前进后退按钮
+
+(304)scroll
+内容高度大小
+element.scrollTop 返回被卷去的上侧距离，返回数值不带单位
+scrollLeft          左侧
+scrollWidth         返回自身实际的宽度，不含宽度，返回数值不带单位
+scrollHeight        高度
+
+(305)淘宝固定侧边栏
+页面被卷通过 window.pageYOffset pageXOffset
+
+(308)mouseover和mouseenter区别
+(309)动画原理
+(310)简单函数封装
+(312)缓动动画原理
+(317)轮播图
+(310)
+(310)
+(310)
+(310)
+(310)
+(310)
