@@ -1,0 +1,130 @@
+3 let变量声明
+ 不能重复声明
+ 块级作用域 只能在代码块有效
+ 不存在变量提升
+ 不允许在声明前调用
+ 不影响作用域效果
+ 不影响作用域链
+
+4
+
+5 const声明
+ 值不能修改的 常量
+ 一定要赋初始值
+ 一般使用大写
+ 块级作用域
+ 对数组和对象的元素修改，不算对常量的修改
+
+6变量的解析赋值
+ let [a, b, c] = [1, 2, 3];
+ let { foo, bar } = { foo: 'aaa', bar: 'bbb' };
+
+7 模板字符串
+ ``
+ 内容中可以直接出现换行符
+ 变量拼接
+ `${xxx}xxx`
+
+8 对象的简化写法
+ 允许在大括号里，直接写入变量和函数，作为对象的属性和方法。
+ let name ='xx'
+ const school={name}
+ 
+ 方法
+ improve:function(){}
+ improve(){}
+
+9 箭头函数
+ this是静态的，this始终指向函数声明时所在作用域下的this的值
+
+ 不能构造实例化对象
+
+ 不能使用arguments变量
+
+ 当形参有且只有一个省略小括号
+ let add=n=>{}
+ 当代码体只有一条语句省略花括号 此时return必须省略 语句的执行结果就是函数的返回值
+ let pow =n=>
+
+10
+ 适合与this无关的回调，定时器，数组的方法回调
+
+ 不适合事件回调 对象的方法
+
+11 函数参数的默认值设置
+ 给函数参数赋值初始值
+ 具有默认值的参数，一般位置靠后
+
+    function connect({host='22'}){}
+    connect({host:'23'})
+
+12 rest参数
+ function date(...args){
+     console.log(args);
+ }
+ date('xx')
+ 返回数组 获取函数的实参，用来代替arguments
+ rest参数必须要放到参数最后
+
+13 扩展运算符
+... 能将数组转换为逗号分隔的参数序列
+   const tf=['1','a'];
+        function ch() {
+            console.log(arguments);
+        }
+        ch(...tf)
+14
+ 数组合并
+ const xx=[...xx,...xxx]
+ 数组的克隆
+
+ 将伪数组转为真数组
+ const divs=document.querySelectorAll('div')
+ const divArr=[...divs]
+
+15 Symbol创建
+ 新的数据类型 表示独一无二的值
+ 值是唯一的 用来解决命名冲突的问题
+ 不能与其他数据进行运算
+ 不能使用for in循环遍历 但是可以用Reflect.ownKeys来获取对象的所有键名
+
+ 函数 let s=Symbol();
+ 函数对象 let s=Symbol.for('x') 可以一样
+
+ usonb
+ undefined
+ string Symbol
+ object
+ null number
+ boolean
+
+16 对象添加Symbol类型的属性
+ let mySymbol = Symbol();
+
+// 第一种写法
+let a = {};
+a[mySymbol] = 'Hello!';
+
+// 第二种写法
+let a = {
+  [mySymbol]: 'Hello!'
+};
+  console.log(a[mySymbol]);
+17 内置属性
+
+18 迭代器
+
+19 迭代器的应用自定义遍历数据
+
+20 生成器函数的声明和调用
+
+21 生成器函数的参数传递
+
+22 生成器函数实例
+
+23
+
+24 Promise
+
+
+

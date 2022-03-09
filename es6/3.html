@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = [];
+        for (var i = 0; i < 10; i++) {
+            a[i] = function () {
+                console.log(i+1);
+            };
+        }
+        a[9](); 
+        console.log(a[2]);
+        let { fo, bar } = { foo: 'aaa', bar: 'bbb' };
+        console.log(fo);
+        console.log(bar);
+        function fn(...args){
+            console.log(args);
+        }
+        fn(1,2,3)
+        const tf=['1','a'];
+        function ch() {
+            console.log(arguments);
+        }
+        ch(...tf)
+        console.log(...tf,...tf);
+    </script>
+</body>
+
+</html>
