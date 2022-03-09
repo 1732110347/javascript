@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hide {
+            display: none;
+        }
+        button{
+            width: 100px;
+            
+           
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var b1 = document.querySelector(".b1");
+            var first = b1.querySelectorAll("button");
+            var first1 = b1.querySelectorAll("form");
+            for (var i = 0; i < first.length; i++) {
+                first[i].index = i;
+                first[i].onclick = function () {
+                    for (var n = 0; n < first.length; n++) {
+                        first1[n].className = "hide";
+
+                    }
+                    first1[this.index].className = "";
+                }
+            };
+            var b2 = document.querySelector(".b2");
+            var first2 = b2.querySelectorAll("button");
+            var first3 = b2.querySelectorAll("form");
+            for (var i = 0; i < first.length; i++) {
+                first2[i].index = i;
+                first2[i].onclick = function () {
+                    for (var n = 0; n < first.length; n++) {
+                        first3[n].className = "hide";
+
+                    }
+                    first3[this.index].className = "";
+                }
+            };
+        
+        }
+    </script>
+</head>
+
+<body>
+    <div class="b1">
+        <button>z</button>
+        <button>s</button>
+        <button>g</button>
+        <form action="增2.jsp" method="post" >
+			输入学号:<input type="text" name="stuno"><BR>
+
+		</form>
+        <form action="增2.jsp" method="post">
+			
+			输入姓名:<input type="text" name="stuname"><BR>
+		
+		</form>
+        <form action="增2.jsp" method="post">
+			
+			输入年龄:<input type="text" name="stuage"><BR>
+
+		</form>
+    </div>
+    <div class="b2">
+        <button>z</button>
+        <button>s</button>
+        <button>g</button>
+        <div class="z1">1111111</div><br>
+        <div class="s1">22</div><br>
+        <div class="g1">3331</div>
+    </div>
+
+   
+</body>
+
+</html>

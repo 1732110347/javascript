@@ -5,14 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-  
-    <script>
-       var b=['2','4'];
-       b[3]='3';
-       console.log(b)
-    </script>
 </head>
 <body>
-    
+    <script>
+        var back=querySelector(".back");
+		back.onclick=function(){
+			localStorage.clear();
+			 location.href = 'index.html';
+		}
+    </script>
+    <button class="back">退出</button>
 </body>
 </html>

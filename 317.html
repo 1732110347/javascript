@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            list-style:none;
+            border: 0;
+            padding: 0;
+        }
+        img{
+            width: 720px;
+            height: 300px;
+        }
+        .focus{
+            position: relative;
+            width: 720px;
+            height: 455px;
+            background-color: purple;
+            overflow: hidden;
+        }
+        .focus ul{
+            width: 400%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .focus ul li{
+            float: left;
+        }
+        /* .allow-l,
+        .allow-r{
+            display: none;
+            position: absolute;
+            top: 50%;
+            margin-top: -20px;
+            width: 240px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, -3);
+            text-align: center;
+            line-height: 40px;
+        } */
+     
+        .circle{
+            position: relative;
+            top: 400px;
+        }
+        .circle li{
+            
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            float: left;
+            border-radius: 50%;
+            margin-left: 5px;
+        }
+        .current{
+            border: 2px solid yellow;
+        }
+    </style>
+    <script src="312.js"></script>
+    <script src="317.js"></script>
+</head>
+
+<body>
+    <div class="focus">
+        <!-- 左按钮 -->
+        <a href="javascript:;" class="arrow-l" style="display: none;position: absolute;">1</a>
+        <!-- 右按钮 -->
+        <a href="javascript:;" class="arrow-r" style="display: none;position: absolute;left: 50px;">2</a>
+        <!-- 滚动区域 -->
+        <ul>
+            <li>
+                <a href="javascript:;"><img src="./img44.png" alt=""></a>
+            </li>
+            <li>
+                <a href="javascript:;"><img src="./img45.png" alt=""></a>
+            </li>
+            <li>
+                <a href="javascript:;"><img src="./img46.png" alt=""></a>
+            </li>
+        </ul>
+        <!-- 圆点 -->
+        <ol class="circle">
+          
+        </ol>
+    </div>
+</body>
+
+</html>

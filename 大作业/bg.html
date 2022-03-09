@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>信息采集</title>
+
+
+    <style>
+        body {
+	margin: 0 auto;
+	font-family: STXihei, "Microsoft YaHei";
+}
+/*消除单元格间的间隔*/
+table {
+	border-collapse:collapse;
+}
+div {
+	margin: 0 auto;
+	width: 80%;
+	text-align: left;
+}
+input {
+	margin-bottom: 5px;
+	display: block;
+	border-radius: 3px;
+}
+button {
+	margin-left: 5px; 
+	border-radius: 5px;
+}
+th,
+td {
+	padding: 5px;
+	text-align: center;
+	border: 2px solid blue;
+	background-color: #EEE;
+}
+span {
+	font-weight: bold;
+}
+span:hover {
+	color: red;
+}
+.collect {
+	padding: 10px;
+	margin-bottom: 20px;
+	font-weight: bold;
+	border: 2px solid green;
+	border-radius: 5px; 
+}
+.revise {
+	margin-top: 20px;
+	width: 100%;
+	border: 2px solid black;
+	display: none;
+}
+.revise input {
+	display: inline;
+}
+#pnumber {
+	width: 50px;
+	border-radius: 5px;
+	text-align: center;
+}
+.table {
+	margin: 0 auto;
+	width: 80%;
+	border-radius: 5px;
+}
+    </style>
+    <script>
+        function submit() {
+	var i=document.getElementById("id").value;
+	var n=document.getElementById("name").value;
+	var s=document.getElementById("sex").value;
+	if (i==0||n==0||s==0) {alert("error:\n输入错误"); return 0;}
+	var	rows=table.rows.length;
+	var r=document.getElementById("table").insertRow(rows);
+	var d1=r.insertCell(0);
+	var d2=r.insertCell(1);
+	var d3=r.insertCell(2);
+	var d4=r.insertCell(3);
+	d1.innerHTML=i;
+	d2.innerHTML=n;
+	d3.innerHTML=s;
+	d4.innerHTML="<span onclick='reviseRow(this);'>修改</span>/<span onclick='deleteRow(this);'>删除</span>";
+	document.getElementById("id").value="";
+	document.getElementById("name").value="";
+	document.getElementById("sex").value="";
+	return 0;
+}
+function deleteRow(obj) {
+	var tbody=document.getElementById('table').lastChild;  
+	var tr=obj.parentNode.parentNode;
+	tbody.removeChild(tr);
+}
+function reviseRow(obj) {
+	var tr=obj.parentNode.parentNode.rowIndex; 
+	var td1=document.getElementById("table").rows[tr].cells[0].innerHTML;
+	var td2=document.getElementById("table").rows[tr].cells[1].innerHTML;
+	var td3=document.getElementById("table").rows[tr].cells[2].innerHTML;
+	document.getElementById("table").rows[tr].cells[0].innerHTML="<input type='text' name='学号' id='i1'>";
+	document.getElementById("table").rows[tr].cells[1].innerHTML="<input type='text' name='姓名' id='i2'>";
+	document.getElementById("table").rows[tr].cells[2].innerHTML="<input type='text' name='性别' id='i3'>";
+	document.getElementById("table").rows[tr].cells[3].innerHTML="<span onclick='save(this);'>保存</span>/<span onclick='deleteRow(this);'>删除</span>";
+	document.getElementById("i1").value=td1;
+	document.getElementById("i2").value=td2;
+	document.getElementById("i3").value=td3;
+}
+function save(obj) {
+	var tr=obj.parentNode.parentNode.rowIndex;
+	document.getElementById("table").rows[tr].cells[0].innerHTML=document.getElementById("i1").value;
+	document.getElementById("table").rows[tr].cells[1].innerHTML=document.getElementById("i2").value;
+	document.getElementById("table").rows[tr].cells[2].innerHTML=document.getElementById("i3").value;
+	document.getElementById("table").rows[tr].cells[3].innerHTML="<span onclick='reviseRow(this);'>修改</span>/<span onclick='deleteRow(this);'>删除</span>";
+}
+    </script>
+</head>
+<body>
+	<!--标题-->
+	<h1 style="text-align: center;">信息采集表</h1>
+	<!--信息采集-->
+	<div class="collect" id="collect">
+		学号：<input type="text" name="学号" id="id">
+		姓名：<input type="text" name="姓名" id="name">
+		性别：<input type="text" name="性别" id="sex">
+		<button onclick="submit();">提交</button>
+	</div>
+	<!--表格内容-->
+	<h1 style="text-align: center;">学生信息表</h1>
+	<table class="table" id="table">
+		<tr>
+			<th>学号</th>
+			<th>姓名</th>
+			<th>性别</th>
+			<th>备注</th>
+		</tr>
+	</table>
+</body>
+</html>

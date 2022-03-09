@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sliderbar {
+            background-color: red;
+            width: 200px;
+            height: 50px;
+            position: relative;
+        }
+
+        span {
+            background-color: yellow;
+            width: 40px;
+            height: 50px;
+            display: block;
+        }
+        .con{
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+    </style>
+    <script src="312.js"></script>
+</head>
+
+<body>
+    <div class="sliderbar">
+        <span></span>
+        <div class="con">问题反馈</div>
+    </div>
+    
+    <script>
+        var sliderbar = document.querySelector('.sliderbar');
+        var con = document.querySelector('.con');
+        sliderbar.addEventListener('mouseenter', function () {
+            animate(con, -160);
+        })
+
+    </script>
+</body>
+
+</html>

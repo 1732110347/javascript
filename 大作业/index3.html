@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>tab切换</title>
+    <style type="text/css">
+        /* CSS样式制作 */
+        * {
+            margin: 0px;
+            padding: 0px;
+            font: 12px normal "microsoft yahei";
+        }
+
+        .box {
+
+            width: 720px;
+            height: 500px;
+            background-color: rgb(241, 235, 235);
+            margin: auto;
+            position: relative;
+        }
+
+        #tabs ul {
+            margin-top: 50px;
+            list-style: none;
+            display: block;
+            height: 30px;
+            line-height: 30px;
+            border-bottom: 2px solid rgb(21, 141, 221);
+            width: 690px;
+            padding-left: 30px;
+        }
+
+        #tabs ul li {
+            float: left;
+            cursor: pointer;
+            width: 100px;
+            height: 28px;
+            line-height: 28px;
+            margin: 0 3px;
+            border: 1px solid #aaaaaa;
+            border-bottom: none;
+            text-align: center;
+        }
+
+        #tabs ul li.on {
+            border-top: 2px solid saddlebrown;
+            border-bottom: 2px solid #fff;
+        }
+
+        #tabs div {
+            width: 708px;
+            height: 458px;
+            line-height: 25px;
+
+            border-top: none;
+            padding: 5px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        button {
+            width: 100px;
+            border-radius: 5px;
+            height: 30px;
+        }
+
+        .z1 {
+            position: absolute;
+            top: 300px;
+            left: 150px;
+        }
+
+        .s1 {
+            position: absolute;
+            top: 300px;
+            left: 300px;
+        }
+
+        .g1 {
+            position: absolute;
+            top: 300px;
+            left: 450px;
+        }
+        form{
+          /* text-align: center; */
+          margin-left: 250px;
+        }
+    </style>
+    <script type="text/javascript">
+
+        // JS实现选项卡切换
+        window.onload = function () {
+            var account = localStorage.getItem('account');
+            var password = localStorage.getItem('password');
+            var oTab = document.getElementById("tabs");
+            var oUl = oTab.getElementsByTagName("ul")[0];
+            var oLis = oUl.getElementsByTagName("li");
+            var oDivs = oTab.getElementsByTagName("div");
+
+            // if (account==2&&password==2) {
+            localStorage.clear()
+            for (var i = 0; i < oLis.length; i++) {
+                oLis[i].index = i;
+                oLis[i].onclick = function () {
+                    for (var n = 0; n < oLis.length; n++) {
+                        oLis[n].className = "";
+                        oDivs[n].className = "hide";
+                    }
+                    this.className = "on";
+                    oDivs[this.index].className = "";
+                }
+            };
+            // }else{
+            //     location.href = 'index.html'
+            // }
+
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <div id="tabs">
+            <ul>
+                <li class="on">管理员信息</li>
+                <li class="off">库房信息</li>
+                <li class="off">零件信息</li>
+                <li class="off">企业信息</li>
+                <li class="off">任职信息</li>
+                <li class="off">库存信息</li>
+            </ul>
+            <div class="show">
+
+                <button class="z1">z</button>
+                <button class="s1">s</button>
+                <button class="g1">g</button>
+                <form action="增2.jsp" method="post">
+                    输入工号:<input type="text" name="stuno"><BR>
+                    输入姓名:<input type="text" name="stuname"><BR>
+                    选择性别:
+                    <select name="stusex">
+                        <option value="男">男</option>
+                        <option value="女">女</option>
+                    </select><BR>
+                    输入年龄:<input type="text" name="stuage"><BR>
+                    输入电话:<input type="text" name="stuage"><BR>
+                    输入工资:<input type="text" name="stuage"><BR>
+                    <input type="submit" value="提交">
+                </form>
+                <!-- <form action="增2.jsp" method="post">
+
+                    输入姓名:<input type="text" name="stuname"><BR>
+
+                </form>
+                <form action="增2.jsp" method="post">
+
+                    输入年龄:<input type="text" name="stuage"><BR>
+
+                </form> -->
+
+            </div>
+            <div class="hide">
+                22d
+
+            </div>
+            <div class="hide">
+                2233333
+            </div>
+            <div class="hide">
+                33
+            </div>
+            <div class="hide">
+                44
+            </div>
+            <div class="hide">
+                55
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

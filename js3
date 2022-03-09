@@ -63,13 +63,143 @@ scrollHeight        高度
 页面被卷通过 window.pageYOffset pageXOffset
 
 (308)mouseover和mouseenter区别
+mouseenter 经过自身盒子触发 不冒泡 mouseleave离开
+mouseover经过自身和子盒子
+
 (309)动画原理
+通过定时器不断移动 setInterval()
+
 (310)简单函数封装
+
 (312)缓动动画原理
+(目标值-现在的位置)/10 
+  
 (317)轮播图
-(310)
-(310)
-(310)
-(310)
-(310)
-(310)
+
+(328)节流阀以及逻辑中断应用
+当上一个动画结束再执行下一个，让事件无法连续触发
+核心 利用回调函数 添加一个变量来控制，锁住函数和解锁函数
+开始设置一个变量 var flag=true
+if(flag){flag=false;do something}关闭水龙头
+利用回调函数动画执行完毕，flag=true 打开水龙头
+
+(329)带有动画的返回顶部
+window.scroll(x,y)不跟单位
+
+(330)筋斗云
+
+(332)移动端touch触摸事件
+touchstart  手指触摸到一个DOM元素时触发
+touchmove   滑动
+touchend    移开
+
+(333)TouchEvent触摸事件对象
+touches     正在触摸屏幕的所有手指的一个列表
+targetTouches 当前DOM元素上的手指的一个列表
+changedTouches 手指状态发送了改变的列表 从无到有 从有到无的变化
+
+(334)移动端拖动元素
+
+(335)轮播图
+transform translateX
+transition='all .3s'
+transitionend 监听过渡完成
+
+(339)classList类名操作
+返回元素类名
+在元素中添加，移除 切换css类
+添加 element.classList.add('类名')
+删除
+element.classList.remove('类名')
+切换 
+element.classList.toggle('类名')
+
+(344)返回顶部
+(345)click延时
+1禁用缩放
+<meta content="user-scalable=no">
+2利用touch事件封装
+
+(346)fastclick插件使用
+
+(347)swiper插件使用 引入相关文件
+(349)swiper插件使用 参数更改
+(351)视频插件zy.media.js使用
+
+(352)bootstrap轮播图
+
+(353)阿里百秀轮播图
+
+(355)本地存储 sessionStorage
+5m
+只能存储字符串,将JSON。.stringify()编码后存储
+生命周期为关闭浏览器窗口
+同一个窗口(页面)下数据可以共享
+以键值对的形式存储
+存储
+sessionStorage.setItem(key,value)
+获取
+sessionStorage.getItem(key)
+删除
+sessionStorage.removeItem(key)
+删除所有
+sessionStorage.clear()
+
+(355)本地存储 localStorage
+20m
+永久
+多窗口(同一个浏览器)
+存储
+localStorage.setItem(key,value)
+获取
+localStorage.getItem(key)
+删除
+localStorage.removeItem(key)
+删除所有
+localStorage.clear()
+
+(356)记住用户名
+
+json
+特殊格式字符串，可以被任何语言认识
+并且可以转换为任意语言对象，在开发过程中主要用来数据交互
+
+json字符串中的属性名必须加双引号
+分类
+ 1对象{}
+ var obj='{"name":"孙悟空","age":18}';
+ 2数组[]
+ var arr='[1,2,"hello",true]';
+
+ 允许的值
+ 字符串
+ 数值
+ 布尔值
+ null
+ 对象
+ 数组
+
+ 将一个json字符串转换为js对象
+ JSON.parse(xx)
+
+js对象转为JSON字符串
+返回一个JSON字符串
+JSON.stringify(xx)
+
+eval()用来执行一段字符串形式的js代码，并将结果返回
+var str="alert('hello')"
+eval(str)
+
+如果含有{},会将当成代码块
+如果不希望将其当成代码快解析，则需要在字符串中添加一个()
+eval("("+xx+")")
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    请您输入账号:<input name="account" type="text" id="account"><br>
+    请您输入密码:<input name="password" type="password" id="password"><br>
+
+    <button>登录</button>
+  
+    <script>
+        var account = document.getElementById("account");
+        var password = document.getElementById("password");
+        var button = document.querySelector("button");
+        button.onclick = function () {
+            if(account.value==2&&password.value==2){
+                localStorage.setItem('account', account.value)
+            localStorage.setItem('password', password.value)
+            location.href = 'index3.html'
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
