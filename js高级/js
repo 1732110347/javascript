@@ -1,0 +1,59 @@
+2 数据类型
+  基本(值)类型
+  String:任意字符串
+  Number:任意数字
+  boolean: true/false
+  undefined:undefined
+  null:null
+  对象 引用
+  Object:任意对象
+  Function:一种特别的对象 可以执行
+  Array:一种特别的对象 数值下标,内部数据
+
+  判断类型
+  typeof 返回数据类型的字符串表达 undefined 数值 字符串 布尔值 function  不能判断null与object object与array
+  instanceof 判断对象的具体类型  a instanceof Object a是不是Object实例
+  === 可以判断 undefined null
+
+ ()调用函数
+ 
+3 相关问题
+ undefined代表定义未赋值
+ null 定义赋值了为null 表明将要赋值为对象
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

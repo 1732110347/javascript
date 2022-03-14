@@ -110,9 +110,13 @@ let a = {
   [mySymbol]: 'Hello!'
 };
   console.log(a[mySymbol]);
+
 17 内置属性
 
 18 迭代器
+ iterator是一种接口，为各种不同的数据结构提供统一的访问机制 完成遍历操作
+ for in保存的是键名
+ for of保存的键值
 
 19 迭代器的应用自定义遍历数据
 
@@ -125,6 +129,51 @@ let a = {
 23
 
 24 Promise
+
+
+
+33 class
+ 每个函数都有一个prototype属性，这个属性是指向一个对象的引用，这个对象称为原型对象，原型对象包含函数实例共享的方法和属性，
+ 也就是说将函数用作构造函数调用（使用new操作符调用）的时候，新创建的对象会从原型对象上继承属性和方法。
+ 
+ 默认情况下prototype属性会默认获得一个constructor(构造函数)属性，
+
+ 添加方法 父级构造函数
+ xx.prototype.xx=function(){
+   xx
+ }
+ 实例化
+ let xx=new xx('x')
+
+ class xx{
+   构造函数 名字不能修改
+   constructor(xx,xx){
+
+   }
+   方法必须使用该语法,不能使用es5的对象完整形式 call:function()
+   xx(){
+
+   }
+ }
+ 
+34 静态成员
+ 函数静态 xxx.xxx
+
+ static xxx 
+ 不能被实例化对象调用
+ 可以被类对象调用
+
+35 构造函数继承
+ 
+
+
+
+
+
+
+
+
+
 
 
 
