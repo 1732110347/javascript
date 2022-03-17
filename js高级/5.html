@@ -20,8 +20,8 @@
         var a=12
         var b=a
         a=13
-        function fun(b){
-            b=b+1
+        function fun(a){
+          this.a=a+1
         }
         fun(a)
         console.log(a);
