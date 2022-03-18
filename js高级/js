@@ -130,10 +130,17 @@ js管理内存
  它的值是调用函数的当前对象
 
  2如何确定this
- test() windo
+ test() window
  p.test() p
  new test() 新创建的对象
  p.call(obj) obj
+
+
+ 1. 以函数的形式调用时，this永远都是window
+ 2. 以方法的形式调用时，this就是调用方法的对象
+ 3. 以构造函数的形式调用时，this就是新创建的对象
+ 4. 使用call和apply调用时，this就是指定的那个对象
+ 5. 在全局作用域中this代表window
 
 12 分号
  1js一条语句的后面可以不加分号
@@ -197,17 +204,76 @@ js管理内存
  Object.prototype.__proto__  null
 
 19 属性问题
+ 1读取对象的属性值 会自动到原型链中查找
+ 2设置对象属性值时 不会查找原型链，如果当前对象中没有此属性，直接添加此属性并设置其值
+ 3方法一般定义在原型中中，属性一般通过构造函数定义在对象本身上
 
 20 探索instanceof
+ 1instanceof是如何判断的
+ 表达式 A instanceof B 
+ 如果B函数的显示原型对象在A对象的原型链上，返回true，否则返回false
+ 2 Function是通过new自己产生的实例
+
+ Object instanceof Object true
+ Function instanceof Function true
+ Function instanceof Object true
+ Object instanceof Function true
+ function Foo(){}
+ Object instanceof Foo false
 
 21 原型 面试题
+      function A(){
+
+        }
+        A.prototype.n=1
+        var b=new A()
+        A.prototype={
+            n:2,
+            m:3
+        }
+        var c=new A()
+        console.log(b.n,b.m,c.n,c.m); //1 undefined 2 3
+
 
 22 变量提升与函数
+ 1 变量声明提升
+ 通过var定义(声明)的变量,在定义语句之前就可以访问到
+ 值：undefined
+
+ 2函数声明提升
+ 通过function声明的函数，在之前就可以直接调用
+ 值：函数定义(对象)
+
+ 3 变量提升和函数提升是如何产生的
 
 23 执行上下文
+ 1 全局代码 函数代码局部
+
+ 2全局执行上下文
+ 在执行全局代码前将window确定为全局执行上下文
+ 对全局数据进行预处理
+ var定义的全局变量==>undefined 添加为window属性
+ function声明的全局函数==>赋值(fun),添加为window方法
+ this==>赋值(window)
+ 开始执行全局代码
+
+ 3 函数执行上下文
+ 在调用函数，准备执行函数体之前，创建对应的函数执行上下文对象
+ 对局部数据进行预处理
+ 形参变量==>赋值(实参)==>添加为指向上下文的属性
+ arguments==>辅助(实参列表) 添加为执行上下文的属性   伪数组
+ var定义的局部变量==>undefined 添加为执行上下文的属性
+ function声明的函数==>赋值(fun) 添加为执行上下文的属性
+ this==>赋值 调用函数的对象
+ 开始执行函数体代码
 
 24 执行上下文栈
-
+ 1 在全局代码执行前 js引擎就会创建一个栈来存储管理所有的执行上下文对象
+ 2 在全局执行上下文(window)确定后 将其添加到栈中 压栈
+ 3 在函数执行完上下文创建后 将其添加到栈中
+ 4 在当前函数执行完后 将栈顶的对象移除 出栈
+ 5 当所有的代码执行完后 栈中只剩下window
+ 
 25 面试题
 
 26 复习
