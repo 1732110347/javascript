@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var name = "xx"
+        var object = {
+            name: "as",
+            get: function () {
+                return function () {
+                    return this.name
+                }
+            }
+        }
+        alert(object.get()())
+    </script>
+    <script>
+        var name2 = "xx"
+        var object2 = {
+            name2: "as",
+            get2: function () {
+                var that = this
+                return function () {
+                    return that.name2
+                }
+            }
+        }
+        alert(object2.get2()())
+    </script>
+</body>
+
+</html>
