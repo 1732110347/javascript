@@ -15,21 +15,191 @@
 
  作用 不会污染全局变量
  
+3 模板字符串
+ xx.innerHTML="<p id="+id+">"+name+"</p>"
+
+ xx=`<p id=${id}>${name}</p>`
+
+4 函数数之默认值、剩余参数
+ function add(a,b=10)
+
+ 默认表达式也可以是一个函数
 
 
+ 剩余运算符
+ 用于将剩余多个值压缩收集起来生成一个数组作为参数。
+     function pick(obj, ...keys) {
+            console.log(keys);
+            console.log(obj[keys[1]]);
+            let result = Object.create(null);
+            for (let i = 0; i < keys.length; i++) {
+                result[keys[i]] = obj[keys[i]];
+            }
+            return result;
+        }
+        let book = {
+            title: 'aa',
+            author: 'sss'
+        }
+        let bookd = pick(book, 'author', 'title');
+        console.log(bookd);
 
+5 函数之扩展运算符、箭头函数
+ 扩展运算符：将一个数组分割，并将各个项作为分离的参数传给函数
+ const arr=[1,2,3,4,5]
+ Math.max(...arr)
+ 
+ 箭头函数
+ function(){}等于与()=>{}
+  当形参有且只有一个省略小括号
+ let add=n=>{}
+ 当代码体只有一条语句省略花括号 此时return必须省略 语句的执行结果就是函数的返回值
+ let pow =n=>
 
+6 箭头函数this指向和注意事项
+ 
+7 解构赋值
+ 对赋值运算符的一种扩展
+ 它针对数组和对象来进行操作
+ 优点：代码书写上简洁易读
+ 完全解构
+ let node={
+     type:'xx',
+     name:'xx'
+ }
+ let {type,name}=node
 
+ 不完全解构
+ let obj={
+     a:{
+         name:'xx'
+     }
+ }
+ let {a}=obj 
 
+8 扩展的对象的功能
+  允许在大括号里，直接写入变量和函数，作为对象的属性和方法。
+ let name ='xx'
+ const school={name}
+ 
+ 方法
+ improve:function(){}
+ improve(){}
+  
+              ifShow:true,
+            [name+'bc']:123,
 
+ is() 比较两个值是否严格相等
+ xx.is(xx,xx)
 
+ assign()
+ 对象的合并
+ 将后面的合并到第一个
+       let c= Object.assign({},{a:1},{b:2})
+       console.log(c);
 
+9 Symbol类型
+ 原始数据类型Symbol 它表示是独一无二的值
+ 最大的用途：用来定义对象的私有变量
 
+ 新的数据类型 表示独一无二的值
+ 值是唯一的 用来解决命名冲突的问题
+ 不能与其他数据进行运算
+ 不能使用for in循环遍历 但是可以用Reflect.ownKeys来获取对象的所有键名
 
+ 函数 let s=Symbol();
+ 函数对象 let s=Symbol.for('x') 可以一样
 
+ usonb
+ undefined
+ string Symbol
+ object
+ null number
+ boolean
 
+ 对象添加Symbol类型的属性
+ let mySymbol = Symbol();
 
+ // 第一种写法
+ let a = {};
+ a[mySymbol] = 'Hello!';
 
+ // 第二种写法
+ let a = {
+  [mySymbol]: 'Hello!'
+ };
+  console.log(a[mySymbol]);
+
+  如果用Symbol定义的对象中的变量，取值时一定要用[变量名]
+
+  获取Symbol声明的属性名(作为对象的key)
+
+  Object.getOwnPropertySymbols(obj);
+   反射
+ Reflect.ownKeys(obj)
+
+10 Set集合数据类型
+ 集合表示无重复值的有序列表
+ let set=new Set()
+ set.add()
+
+ set.deledte
+
+ 校验某个值是否在set中
+ set.has(x)
+ 
+ 访问集合的长度
+ set.size
+
+ 遍历
+ set.forEach((val,key)=>{
+
+ })
+ 
+ 将set转换成数组
+ let set2=new Set([1,2,3])
+ let arr=[...set2]
+
+ 1 set中对象的引用无法被释放
+
+ 通过WeakSet创建的话可以释放
+ 1 不能传入非对象类型的参数
+ 2 不可迭代
+ 3 没有forEach()
+ 4 没有size
+
+11 Map数据类型
+ Map类型是键值对的有序列表，键和值是任意类型
+ let map=new Map()
+ map.set('xx',20)
+ map.get('xx')
+
+ map.has
+ map.delete
+
+12 数组的扩展方法
+
+13
+
+14 迭代器Interator的用法
+
+15 生成器Generator用法
+
+16 Generator的应用
+
+17 Promise的基本使用
+
+18 使用Promise封装ajax
+
+19 Promise对象的其它方法
+
+20 async的用法
+
+21 class类的用法
+
+22 类的继承
+
+23 ES6的模块化实现
 
 
 
