@@ -178,22 +178,137 @@
  map.delete
 
 12 数组的扩展方法
+ 数组的方法 from() of()
+
+ from() 将伪数组转换成真正的数组
+ Array.from(arguments)
+
+
+ 扩展运算符 将伪数组转换成真正的数组 
+ [...lis]
+
+ of() 将任意的数据类型，转换为数组
+ Array.of(3,11,[2,1])
+
+ copywithin() 数组内部将制定位置的元素复制到其它位置，返回当前数组
+ 从3位置往后的所有数组，替换从0位置往后的n个数值
+ [1,2,3,8].copyWithin(0,3)
+
+ find() findIndex()
+ [1,2].find(n=>n<0)
+ 返回第一个满足条件的数组成员
+
+ findIndex()找到索引
 
 13
+ entries() keys() values() 返回一个遍历器 可以使用for...of循环进行
+   entries()对键值对遍历
+   keys() 对键名遍历
+   values() 对值遍历 
+
+         for (let [i,e] of [1, 2].entries()) { 返回键值
+         for (let i of [1, 2].keys()) { 返回索引号
+         for (let i of [1, 2].values()) { 返回值
+ 
+ x=xxx.entries()
+ x.next().value 一次输出一个
+
+
+ includes() 返回应该布尔值，表示默个数组是否包含给定的值
+ [1，2].includes(2) 
+ .indexOf()返回下标 不包含返回-1
 
 14 迭代器Interator的用法
+ 1  迭代器是一个接口，能快捷访问数据，通过Symbol.iterator来创建迭代器
+ 2 迭代器是用于遍历数据结构的指针(数据库的游标)
+ items=[1,2]
+ ite =items[Symbol.iterator]()
+ ite.next()  value:1,done:false 如果遍历完为true
 
 15 生成器Generator用法
+ 可以通过yield关键字，将函数挂起，为了改变执行流提供了可能，同时为了做异步编程提供了方案
+ 与普通函数的区别
+ 1 function后面 函数名之前有个*
+ 2 只能在函数内部使用yield表达式，让函数挂起 (停留)
+
+ function* fun(){
+     yield 2
+ }
+ 返回一个遍历器对象 可以调用next()
+ let f=fun()
+ f.next()
+ 
+ 是分段执行，yield语句是暂停执行 而next()恢复执行
+
+  x不是yield '2'的返回值，它是next()调用 恢复当前yield()执行传入的实参
+        function* fun() {
+            let x = yield '2'
+            return x
+        }
+        let fn=fun()
+      console.log(fn.next());  
+      console.log(fn.next(1));  
 
 16 Generator的应用
+ 部署ajax操作，让异步代码同步化
 
 17 Promise的基本使用
+ 相当于一个容器，保存着未来才会结束的事件(异步操作)的一个结果
+ 各种异步操作都可以用同样的方法进行处理 axios
+
+ 特点
+ 1 对象的状态不受外接影响 处理异步操作 三个状态 Pending(进行) ResoLved(成功) Rejected(失败)
+
+ 2 一旦状态改变，就不会再变，任何时候都可以得到这个结果
+
+   let pro = new Promise(function (resolved, rejected) {
+         if (res.code === 200) {
+                    resolved(res.data);
+                } else {
+                    rejected(res.error);
+                }
+                  pro.then((val) => {
+            console.log(val);
+        }, (err) => {
+            console.log(err);
+        })
 
 18 使用Promise封装ajax
+ then() 
+ 第一个参数是relove回调函数，第二个参数是可选的 是reject状态回调的函数
+ 返回一个新的promise实例，可以采用链式编程
+ 
+ then(null,err->{})==catch(err=>{})
 
 19 Promise对象的其它方法
+ resolve() 将现有的任何对象转换为promise对象
+ Promise.resolve('xx')=new Promise(resolve=>resolve('xx'))
+
+ reject() 将现有的任何对象转换为promise对象
+ Promise.resolve('xx')=new Promise(resolve=>resolve('xx'))
+
+ all() 全部成功才成功一个失败就失败
+ let p1=Promise.resolve('xx')
+ let p2=Promise.resolve('xx')
+ let p3=Promise.resolve('xx')
+ let p4=Promise.all([p1,p2,p3])
+ p4.then
+
+ race() 某个异步请求设置超时时间，并且在超时后执行相应的操作
+ Promise.race([xxx(),xx()]).then
+ 如果可以运行则不执行后面的xx() 负责执行
+ 
+ done()
+ finally()
+ 不管怎么样都会执行
 
 20 async的用法
+ 作用 使得异步操作更加方便
+ 基本操作 async会返回一个Promise对象 then catch
+ async是Generator的一个语法糖
+
+ 如果async函数中多个await 那么then函数会等待所有await指令 运行完的结果 才执行
+ 如果不是Promise对象会转换为
 
 21 class类的用法
 
